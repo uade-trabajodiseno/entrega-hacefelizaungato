@@ -88,7 +88,6 @@ header .btn:hover {
     .navbar-toggler {
         background-color: white;
         color: white; 
-        align-items: right;
     }
 
     .nav-link {
@@ -128,14 +127,6 @@ header .btn:hover {
         align-items: right;
     }
 
-    .nav-link {
-        gap: 24px;
-    }
-
-    header .btn {
-        margin-left: 0;
-        margin-right: 15px;
-    }
 }
 
 
@@ -428,8 +419,12 @@ header .btn:hover {
         margin-right: 15px;
     }
 
-    #services h2, #services h3 {
+    #services h2 {
         font-size: 30px;
+    }
+
+    #services h3{
+        font-size: 18px;
     }
 
     .card-container {
@@ -557,10 +552,10 @@ header .btn:hover {
     #adopt h2 {
         margin-top: 60px;
         margin-left: 15px; 
-        margin-bottom: auto;
         font-size: 30px; 
     }
     #adopt h3{
+        font-size: 18px;
         margin-left: 15px;
         margin-bottom: 30px;
 
@@ -650,10 +645,13 @@ header .btn:hover {
         height: auto;
     }
 
-    #faq h2, #faq h3 {
+    #faq h2 {
         font-size: 30px;
     }
-
+    #faq h3{
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
     #faq .accordion-button{
         font-size: 16px;
         margin-bottom: 15px;
@@ -778,8 +776,13 @@ header .btn:hover {
         margin-top: auto;
     }
 
-    #contact h2, #contact h3 {
+    #contact h2 {
         font-size: 30px;
+    }
+
+    #contact h3{
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 
     .contact .row {
@@ -834,4 +837,17 @@ header .btn:hover {
     color: #FFF;
     justify-content: center;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .footer img {
+        width: 54px;
+        height: 54px;
+        margin-left: 15px;
+    }
+
+    .footer {
+        flex-direction: column; 
+        align-items: center; 
+    }
 }
