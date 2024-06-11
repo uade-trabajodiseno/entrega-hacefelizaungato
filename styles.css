@@ -1,29 +1,35 @@
-/* estilos.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
 
 header {
     background-color: #242121;
     width: 100%;
-    height: 144px;
-    display: flex;
-    align-items: center;
+    max-height: 144px;
+    z-index: 9999 !important;
+    position: fixed;
 }
 
 .navbar-brand img {
-    width: 108px;
-    height: 108px;
+    width: 55px;
+    height: 55px;
     flex-shrink: 0;
-    border-radius: 40px;
-    margin-left: 73px;
+    border-radius: 15px;
 }
 
 .navbar-nav {
     display: flex;
     align-items: center;
-    margin-left: 580px;
 }
 
 .nav-link {
     gap: 48px;
+    font-size: 20px;
     color: white; 
 }
 
@@ -40,7 +46,6 @@ header .btn {
     margin-left: 48px;
     background-color: #F24F4C;
     color: white;
-    margin-right: 54px;
 }
 
 header .btn:hover {
@@ -67,22 +72,44 @@ header .btn:hover {
 @media screen and (max-width: 768px) {
     header {
         height: auto; 
-        justify-content: space-between;
+        max-height: 100% !important;
+        position: fixed;
+    }
+
+    #home{
+        padding-top: 144px;
+        max-height: 540px !important;
+    }
+
+    #home h1{
+        font-size: 30px !important;
+    }
+
+    #home p{
+        font-size: 16px !important;
+        width: 82% !important;
     }
 
     .navbar-brand img {
         width: 54px;
         height: 54px;
-        margin-left: 15px;
     }
 
     .navbar-nav {
         margin-left: 0; 
         flex-direction: column; 
         background-color: #242121; 
-        position: absolute; 
-        right: 0; 
-        top: 100%; 
+    }
+
+    .navbar-collapse{
+        flex-direction: column;
+    }
+
+    .btnSubmitForm{
+        height: 100% !important;
+        padding: 18px 0px !important;
+        font-size: 18px !important;
+        font-weight: 700;
     }
 
     .navbar-toggler {
@@ -98,18 +125,44 @@ header .btn:hover {
         margin-left: 0;
         margin-right: 15px;
     }
+
+    .about-img{
+        width: 100%;
+        height: 100% !important;
+        padding: 35px 0px;
+
+    }
+
+    #about{
+        padding: 50px 0 !important;
+    }
+
+    #about p{
+        padding-bottom: 15px;
+        width: 100% !important;
+        font-size: 18px;
+    }
+
+
+    iframe{
+        display: none;
+    }
+
+    form{
+        padding: 0px 15px;
+    }
+
+    .column-cont-card{
+        flex-wrap: wrap;
+        margin: 0 !important;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    header {
-        height: auto; 
-        justify-content: space-between;
-    }
 
     .navbar-brand img {
         width: 54px;
         height: 54px;
-        margin-left: 15px;
     }
 
     .navbar-nav {
@@ -127,6 +180,7 @@ header .btn:hover {
         align-items: right;
     }
 
+
 }
 
 
@@ -140,9 +194,10 @@ header .btn:hover {
 /* Home */
 #home {
     width: 100%;
-    height: 635px; /* Altura fija para desktop */
+    padding-top: 25px;
+    height: 720px; /* Altura fija para desktop */
     background: url('img/home-bg.svg') lightgray 50% / cover no-repeat;
-    mix-blend-mode: plus-darker;
+    background-blend-mode: multiply;
 }
 
 .home img {
@@ -150,87 +205,57 @@ header .btn:hover {
     height: auto;
 }
 
-.home-sty{
-    margin-left: 5%;
-}
 
 #home h1 {
     color: #FFF;
-    font-family: Montserrat, sans-serif;
-    font-size: 2.5em;
-    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
     font-weight: 700;
-    line-height: 1.5em;
-    display: flex;
     width: 100%;
-    height: auto;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-shrink: 0;
     margin-bottom: 20px;
 }
 
 #home p {
-    display: flex;
     width: 100%;
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
     color: #FFF;
     font-family: Inter, sans-serif;
-    font-size: 1em;
-    font-style: normal;
+    font-size: 24px;
     font-weight: 500;
     line-height: 1.5em;
     margin-bottom: 30px;
 }
 
 #home .btn {
-    display: inline-flex;
-    padding: 14px var(--Spacing-S, 24px);
+    padding: 14px 24px;
     justify-content: center;
     align-items: center;
-    gap: var(--Spacing-XS, 8px);
-    border-radius: var(--Spacing-XS, 8px);
-    background: #000;
-    /* Button Shadow */
+    border-radius: 10px;
+    background: #F24F4C;
+    border: 1px solid #F24F4C;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    margin-left: 0 !important;
+
+}
+
+.home-btn-container{
+    display: flex;
+    gap: 20px;
 }
 
 #home .btn:hover {
-    background-color: #F24F4C;
-    color: white;
+    background-color: transparent;
+    color: #F24F4C;
+    border: 1px solid #F24F4C;
 }
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
     #home {
-        height: auto; 
+        height: 670px; 
     }
 }
 #home .btn {
     margin-bottom: 20px; 
-}
-
-@media screen and (min-width: 768px) {
-    .home-sty{
-        margin-left: 72px;
-    }
-
-    #home h1 {
-        font-size: 75px;
-        line-height: 100%;
-        width: 835px;
-        height: 105px;
-    }
-
-    #home p {
-        font-size: 24px;
-        line-height: 150%;
-        width: 733px;
-        height: 143px;
-    }
 }
 
 
@@ -238,25 +263,20 @@ header .btn:hover {
 
 /* Sobre nosotros */
 #about {
-    background: url('img/about-bg.svg');
-    max-width: 100%;
-    height: auto;
-    flex-shrink: 0;
-    padding: 5%; 
+    background: #E8E8E8;
 }
 
-#about .about-container {
-    margin: 0 auto; 
-    max-width: 80%;
+#about {
+    padding: 140px 0px;
 }
 
 #about h2 {
     width: 100%;
     height: auto;
     flex-shrink: 0;
-    color: #FFF;
-    font-family: Montserrat, sans-serif;
-    font-size: 2.5em;
+    color: #191919;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -264,53 +284,35 @@ header .btn:hover {
 }
 
 .about-img {
-    width: 100%;
-    height: auto;
+
+    height: 560px;
     flex-shrink: 0;
     border-radius: 20px;
 }
 
 #about p {
-    font-size: 1em;
+    font-size: 20px;
     line-height: 1.5em;
-    color: #FFF;
-    font-family: Montserrat, sans-serif;
+    color: #191919;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     width: 100%;
     margin: 0 auto; 
 }
 
-#about .row {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
 
-#about .parraf1 {
-    margin-bottom: 5%; 
-}
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
+
     #about .row {
         flex-direction: row; 
         justify-content: space-between; 
     }
 
-    #about h2, #about p {
-        width: 70%; 
-    }
 
-    #about .parraf1 {
-        margin-top: 30px;
-        margin-bottom: 80px;
+    #about .parraf {
+        margin-bottom: 20px;
     }
-}
-
-#about .parraf2 {
-    margin-bottom: 0; 
-}
 
 
 .about-foto {
@@ -332,14 +334,12 @@ header .btn:hover {
 /* Servicio */
 #services {
     margin-top: 120px; 
-    margin-left: 76px; 
-    margin-right: 76px;
 }
 
 
 #services h2 {
     color: #000;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 45px;
     font-style: normal;
     font-weight: 600;
@@ -350,7 +350,7 @@ header .btn:hover {
 
 #services h3 {
     color: #000;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -359,10 +359,14 @@ header .btn:hover {
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     margin-top: 60px;
+}
+
+.column-cont-card{
+    display: flex;
+    width: 100%;
+    margin-bottom: 73px; 
+    justify-content: space-between;
 }
 
 .card:nth-child(2n) {
@@ -371,12 +375,9 @@ header .btn:hover {
 
 
 .card {
-    width: calc(50% - 117px); 
-    height: 317px;
-    flex-shrink: 0;
-    background-color: #686666;
-    margin-bottom: 144px; 
-    margin-right: 227px;
+    max-width: 530px; 
+    background-color: #242121;
+    padding: 35px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -393,7 +394,7 @@ header .btn:hover {
 
 .card h4 {
     color: #FFF;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
@@ -403,10 +404,10 @@ header .btn:hover {
 
 .card p {
     color: #FFF;
-    font-family: Inter, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
     letter-spacing: -0.36px;
 }
@@ -415,8 +416,6 @@ header .btn:hover {
 @media screen and (max-width: 768px) {
     #services {
         margin-top: 60px;
-        margin-left: 15px;
-        margin-right: 15px;
     }
 
     #services h2 {
@@ -436,6 +435,7 @@ header .btn:hover {
         height: auto; 
         margin-bottom: 30px; 
         margin-right: 0; 
+        padding: 30px;
     }
 
     .card img {
@@ -444,7 +444,11 @@ header .btn:hover {
     }
 
     .card h4, .card p {
-        font-size: 16px; 
+        font-size: 18px; 
+    }
+
+    #about .row{
+        flex-direction: column-reverse !important;
     }
 }
 
@@ -456,9 +460,8 @@ header .btn:hover {
 /* Adoptar */
 #adopt h2 {
     margin-top: 120px; 
-    margin-left: 76px; 
     color: #000;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 45px;
     font-style: normal;
     font-weight: 600;
@@ -467,10 +470,8 @@ header .btn:hover {
 }
 
 #adopt h3 {
-    margin-left: 76px; 
     margin-bottom: 91px;
     color: #000;
-    font-family: sans-serif;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -506,7 +507,7 @@ header .btn:hover {
 }
 
 .adopt-p1{
-    margin-bottom: 3px;
+    margin-bottom: 80px;
     color: #FFF;
     text-align: center;
     font-size: 30px;
@@ -551,25 +552,38 @@ header .btn:hover {
 @media screen and (max-width: 768px) {
     #adopt h2 {
         margin-top: 60px;
-        margin-left: 15px; 
         font-size: 30px; 
     }
     #adopt h3{
         font-size: 18px;
-        margin-left: 15px;
         margin-bottom: 30px;
 
     }
+
+    #adopt h5{
+        margin-bottom: 50px;
+    }
+
+    .adopt-p1{
+        display: none !important;
+    }
     .carousel-caption h5, #adopt h5, .adopt-p1, .adopt-p2 {
         font-size: 20px;
+    }
+
+    .carousel-item img {
+        width: 100%; 
+        height: 330px; 
+        object-fit: cover;
     }
 
     .btn-adopt {
         width: 200px;
         padding: 7px 12px;
     }
-    #adopt{
-        margin-bottom: 85px;
+
+    #about h2{
+        font-size: 30px;
     }
 }
 
@@ -582,16 +596,13 @@ header .btn:hover {
 
 /* FAQ */
 #faq {
-    margin-top: 200px;
-    margin-left: 76px;
-    margin-right: 76px;
-    height: 635px;
-    flex-shrink: 0;
+    padding: 130px 0px;
+    background-color: #E8E8E8;
 }
 
 #faq h2 {
     color: #000;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 45px;
     font-weight: 600;
     line-height: normal;
@@ -600,7 +611,7 @@ header .btn:hover {
 #faq h3 {
     margin-bottom: 65px; 
     color: #000;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -618,16 +629,17 @@ header .btn:hover {
 
 #faq .accordion-button:hover{
     background-color: black;
-    color: #F24F4C;
+    color: white;
 }
 
 #faq .accordion-button:not(.collapsed){
     background-color: black;
-    color: #F24F4C;
+    color: white;
 }
 
 #faq .accordion-item {
     border-left: none;
+    background-color: transparent;
     border-right: none;
     border-bottom: none;
 }
@@ -639,10 +651,8 @@ header .btn:hover {
 /* Media Queries */
 @media screen and (max-width: 768px) {
     #faq {
-        margin-top: 15px;
-        margin-left: 15px;
-        margin-right: 15px;
         height: auto;
+        padding: 60px 0;
     }
 
     #faq h2 {
@@ -669,8 +679,8 @@ header .btn:hover {
 
 /* Contacto */
 #contact {
-    flex-shrink: 0;
-    padding-top: 60px;
+    background-color: #242121;
+    padding: 70px 0;
 }
 
 #contact-container {
@@ -681,22 +691,19 @@ header .btn:hover {
 }
 
 #contact h2 {
-    color: #000;
-    font-family: Montserrat, sans-serif;
-    font-size: 45px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
     font-weight: 600;
-    line-height: normal;
+    text-align: center;
 }
 
 #contact h3 {
-    margin-bottom: 65px;
-    color: #000;
-    font-family: sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.44px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 110px;
 }
 
 .contact .row {
@@ -707,14 +714,13 @@ header .btn:hover {
 }
 
 .contact-info {
-    margin-top: 45px;
     color: #000;
     font-family: Inter, sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 150%;
     max-width: 50%;
-    padding-right: 38px;
+    padding-left: 38px;
 }
 
 .contact-item {
@@ -731,41 +737,60 @@ header .btn:hover {
 
 .contact-form {
     max-width: 50%;
-    padding-left: 38px;
+    padding-left: 0 !important;
 }
 
 .contact-form .form-control {
     width: 100%;
     height: 64px;
-    margin-bottom: 20px;
+    margin-bottom: 38px;
     padding: 10px;
     font-size: 18px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 0;
+    border-bottom: 1px solid #676767;
+    background-color: transparent;
 }
 
-.contact-form textarea.form-control {
-    height: 132px;
+iframe{
+    border-radius: 24px;
+    max-height: 430px;
 }
 
 .contact-form input[type="text"] {
     height: 47px;
 }
 
+input[type="text"]::placeholder, input[type="email"]::placeholder, select::placeholder, select{
+    color: #fff !important;
+
+}
+
+select{
+    background-image: url(https://skf71c.p3cdn1.secureserver.net/wp-content/uploads/2024/05/Rectangle-2.svg);
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 28px;
+}
+
+
 .contact-form button {
     width: 100%;
-    height: 64px;
-    font-size: 30px;
-    border: none;
+    padding: 10px 0px;
+    font-size: 24px;
+    border: 1px solid #F24F4C;
+    font-weight: 700;
+    font-family: 'Inter' sans-serif;
     border-radius: 10px;
     background-color: #F24F4C;
     color: #fff;
     cursor: pointer;
+    transition: 0.4s;
 }
 
 .contact-form button:hover {
-    background-color: black;
-    color: #F24F4C;
+    background-color: transparent;
+    color: #fff;
 }
 
 /* Media Queries */
@@ -776,13 +801,17 @@ header .btn:hover {
         margin-top: auto;
     }
 
+    #contact{
+        margin-bottom: -2px;
+    }
+
     #contact h2 {
         font-size: 30px;
     }
 
     #contact h3{
         font-size: 18px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .contact .row {
@@ -801,7 +830,6 @@ header .btn:hover {
     }
 
     .contact-form .form-control, .contact-form button {
-        height: 32px; 
         font-size: 15px; 
     }
 
@@ -813,11 +841,17 @@ header .btn:hover {
 
 
 /* Footer */
-.footer {
-    display: flex;
+footer {
     background-color: #242121;
     padding: 20px;
     color: white;
+}
+
+.footer{
+
+    display: flex;
+    padding: 33px 0;
+    align-items: center;
 }
 
 .footer img {
@@ -825,7 +859,6 @@ header .btn:hover {
     height: 108px;
     margin-right: 20px;
     border-radius: 40px;
-    margin-left: 73px;
 }
 
 .footer div {
@@ -839,15 +872,42 @@ header .btn:hover {
     text-align: center;
 }
 
+.footer-cont{
+    border-top: 2px solid #676767;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-footer{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+.social-footer a img{
+    width: 35px;
+}
+
 @media screen and (max-width: 768px) {
     .footer img {
         width: 54px;
         height: 54px;
-        margin-left: 15px;
     }
+
+
 
     .footer {
         flex-direction: column; 
         align-items: center; 
+    }
+    .text{
+        padding-top: 20px;
+    }
+
+    .footer-cont{
+        flex-direction: column;
     }
 }
