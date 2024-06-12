@@ -75,25 +75,25 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
 
 
-var currentUrl = encodeURIComponent(window.location.href);
+let currentUrl = encodeURIComponent(window.location.href);
 
   function shareFacebook() {
     window.open('https://www.facebook.com/sharer/sharer.php?u=' + currentUrl, '_blank');
   }
 
   function shareTwitter() {
-    var text = encodeURIComponent('¡Adoptemos un gatito!');
+    let text = encodeURIComponent('¡Adoptemos un gatito!');
     window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + currentUrl, '_blank');
   }
 
   function shareWhatsApp() {
-    var text = encodeURIComponent('Te parece si hacemos feliz a un gato?');
+    let text = encodeURIComponent('Te parece si hacemos feliz a un gato?');
     window.open('https://api.whatsapp.com/send?text=' + text + '%20' + currentUrl, '_blank');
   }
 
   function shareEmail() {
-    var subject = encodeURIComponent('Hace feliz a un gatito');
-    var body = encodeURIComponent('Mirá qué copado el laburo de esta ONG! Hagamos feliz a un gato: ' + currentUrl);
+    let subject = encodeURIComponent('Hace feliz a un gatito');
+    let body = encodeURIComponent('Mirá qué copado el laburo de esta ONG! Hagamos feliz a un gato: ' + currentUrl);
     window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
   }
 
